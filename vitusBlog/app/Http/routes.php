@@ -16,6 +16,7 @@ Route::get('about', 'PagesController@getAbout');
 
 Route::get('home', 'PagesController@getHome');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('posts', 'PostController');
+
+
+Route::get('/', 'PagesController@getHome');

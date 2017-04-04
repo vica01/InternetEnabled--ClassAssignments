@@ -38,6 +38,22 @@ class PagesController extends Controller {
   }
 
   public function getContact(){
-    return view('pages.contact');
+
+    $first = 'Emmanuel';
+    $second = 'Vitus';
+    $log='blog';
+    $full = $first . " " . $second;
+    $mail = 'emmanuelvitus01@gmail.com';
+    $blog = $first . "'s " . $log;
+
+
+    $data = [];
+    $data['email'] = $mail;
+    $data['fullname']= $full;
+    $data['tlog']=$blog;
+
+    return view('pages.contact')->withInfo($data);
   }
+
+
 }
